@@ -24,4 +24,9 @@ public class VehicleServiceImpl implements VehicleService {
     public String getVehicleTypeByServiceId(Long serviceId) {
         return vehicleRepository.findVehicleTypeByServiceId(serviceId);
     }
+
+    @Override
+    public void deleteServiceByServiceYear(int year) {
+        vehicleRepository.deleteByServiceYear(year);
+    }
 }

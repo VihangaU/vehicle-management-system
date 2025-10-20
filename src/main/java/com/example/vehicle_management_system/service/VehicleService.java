@@ -10,4 +10,5 @@ import com.example.vehicle_management_system.model.Vehicle;
 public interface VehicleService {
     List<Vehicle> getVehicleByServiceYear(int year);
     String getVehicleTypeByServiceId(Long serviceId);
+    void deleteServiceByServiceYear(int year);
 }

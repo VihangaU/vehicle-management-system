@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.vehicle_management_system.model.Vehicle;
 import com.example.vehicle_management_system.service.VehicleService;
+
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -32,5 +34,11 @@ public class VehicleController {
         } else {
             return ResponseEntity.notFound().build();
         }
+    }
+
+    @DeleteMapping("/year/{year}")
+    public ResponseEntity<String> deleteServiceByYear(@PathVariable int year) {
+        vehicleService.deleteServiceByServiceYear(year);
+        return ResponseEntity.ok("Vehicles serviced in year " + year + " have been deleted.");
     }
 }
