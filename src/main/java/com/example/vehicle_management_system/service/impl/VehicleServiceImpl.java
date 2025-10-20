@@ -1,4 +1,5 @@
 package com.example.vehicle_management_system.service.impl;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,5 +19,9 @@ public class VehicleServiceImpl implements VehicleService {
     public List<Vehicle> getVehicleByServiceYear(int year) {
         return vehicleRepository.findByServiceYear(year);
     }
-    
+
+    @Override
+    public String getVehicleTypeByServiceId(Long serviceId) {
+        return vehicleRepository.findVehicleTypeByServiceId(serviceId);
+    }
 }

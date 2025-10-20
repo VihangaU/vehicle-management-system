@@ -9,4 +9,5 @@ import com.example.vehicle_management_system.model.Vehicle;
 @Service
 public interface VehicleService {
     List<Vehicle> getVehicleByServiceYear(int year);
+    String getVehicleTypeByServiceId(Long serviceId);
 }

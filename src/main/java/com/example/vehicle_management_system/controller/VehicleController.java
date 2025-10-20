@@ -24,4 +24,13 @@ public class VehicleController {
         return ResponseEntity.ok(vehicles);
     }
     
+    @GetMapping("/type/{serviceId}")
+    public ResponseEntity<String> getVehicleType(@PathVariable Long serviceId) {
+        String vehicleType = vehicleService.getVehicleTypeByServiceId(serviceId);
+        if (serviceId != null) {
+            return ResponseEntity.ok(vehicleType);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 }
